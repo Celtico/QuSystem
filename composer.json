@@ -1,0 +1,33 @@
+{
+    "name": "qu-modules/qu-system",
+    "description": "ZF2 Module for QuAdmin",
+    "type": "module",
+    "version":"0.0.1-dev",
+    "keywords": ["system","zf2","module"],
+    "homepage": "https://github.com/Celtico/QuSystem/",
+    "license": "BSD-3-Clause",
+    "require": {
+        "php": ">=5.3.3",
+         "zendframework/zendframework":"dev-master",
+         "qu-modules/qu-admin":"dev-master"
+    },
+    "authors": [
+        {
+            "name": "Cel Ticó Petit",
+            "email": "cel@cenics.net",
+            "homepage": "http://www.cenics.cat",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "cel@cenics.net"
+    },
+    "autoload": {
+        "psr-0": {
+            "QuSystem": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
