@@ -1,0 +1,20 @@
+
+
+<?php  $this->headTitle('Qu ElFinder'); ?>
+
+<div class="nav-actions-absolute">
+    <div id="elfinder"></div>
+</div>
+
+
+
+<?php
+    echo
+    $this->QuElFinder(
+        'elfinder',
+        array(
+            'width' => "100%",
+            'height' => "1000",
+        )
+    );
+?>

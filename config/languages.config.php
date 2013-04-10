@@ -46,7 +46,7 @@ return array(
         ),
         'defaultLanguage'   => false,
         'documents'         => false,
-        'optionsOrder'      => 'order asc',
+        'optionsOrder'      => 'order desc',
 
         'optionsForm' => array(
 

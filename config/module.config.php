@@ -12,6 +12,7 @@ return array(
             'users_controller' => 'QuSystem\Controller\QuUsersController',
             'languages_controller'  => 'QuSystem\Controller\QuLanguagesController',
             'parameters_controller'  => 'QuSystem\Controller\QuParametersController',
+            'el_finder_controller'  => 'QuSystem\Controller\QuElFinderController',
         ),
     ),
     'view_manager' => array(
@@ -92,6 +93,23 @@ return array(
                             ),
                         ),
                     ),
+                    'el_finder_route' => array(
+                        'type'    => 'segment',
+                        'options' => array(
+                            'route' => '[/:lang]/elfinder[/:action][/:id][/:id_parent]',
+                            'constraints' => array(
+                                'lang'      => '[a-z]{2}(-[A-Z]{2}){0,1}',
+                                'action'    => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id'        => '[0-9]+',
+                                'id_parent' => '[0-9]+',
+                            ),
+                            'defaults' => array(
+                                'lang'          => 'es',
+                                'controller'    => 'el_finder_controller',
+                                'action'        => 'index',
+                            ),
+                        ),
+                    ),
                 ),
             ),
         ),
@@ -128,6 +146,12 @@ return array(
                         'icon'  => '&#xe141;',
                         'label' => 'Parameters',
                         'route' => 'system_route/parameters_route',
+                    ),
+                    'el_finder' => array(
+                        'icon'   =>'&#xe028;',
+                        'label' => 'El finder',
+                        'route' => 'system_route/el_finder_route',
+
                     ),
                     'cgmconfigadmin' => array(
                         'icon'   =>'&#xe13c;',
