@@ -27,21 +27,21 @@ return array(
         'tableLabel'           => 'User List',
         'tableKeyFields'       => array(
 
-            'KeyId'            => 'user_id',
+            'key_id'            => 'user_id',
 
-            'KeyTitle'         => 'username',
-            'KeyStatus'        => 'state',
+            'key_title'         => 'username',
+            'key_status'        => 'state',
 
-            'KeyName'          => false,
-            'KeyDate'          => false,
-            'KeyModified'      => false,
-            'KeyIdParent'      => false,
-            'KeyOrder'         => false,
-            'KeyLang'          => false,
-            'KeyIdLangLinker'  => false,
-            'KeyLevel'         => false,
-            'KeyPath'          => false,
-            'KeyIdAuthor'      => false,
+            'key_name'          => 0,
+            'key_date'          => 0,
+            'key_modified'      => 0,
+            'key_id_parent'     => 0,
+            'key_order'         => 0,
+            'key_lang'          => 0,
+            'key_id_lang'       => 0,
+            'key_level'         => 0,
+            'key_path'          => 0,
+            'key_id_author'     => 0,
 
         ),
 

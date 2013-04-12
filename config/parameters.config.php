@@ -14,18 +14,20 @@ return array(
         'entity'               => 'Parameters\Entity\Parameters',
         'tableKeyFields'       => array(
 
-            'KeyId'            => 'id',
-            'KeyName'          => 'name',
-            'KeyTitle'         => 'title',
-            'KeyIdAuthor'      => 'id_author',
-            'KeyStatus'        => 'status',
-            'KeyOrder'         => 'order',
-            'KeyIdParent'      => false,
+            'key_id'            => 'id',
+            'key_name'          => 'name',
+            'key_title'         => 'title',
+            'key_id_author'     => 'id_author',
+            'key_status'        => 'status',
+            'key_order'         => 'order',
 
-            'KeyIdLangLinker'  => false,
-            'KeyLang'          => false,
-            'KeyDate'          => false,
-            'KeyModified'      => false,
+            'key_id_parent'     => 0,
+            'key_date'          => 0,
+            'key_modified'      => 0,
+            'key_lang'          => 0,
+            'key_id_lang'       => 0,
+            'key_level'         => 0,
+            'key_path'          => 0,
 
         ),
 
