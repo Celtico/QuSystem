@@ -153,12 +153,12 @@ return array(
                         'route' => 'system_route/el_finder_route',
 
                     ),
-                    'cgmconfigadmin' => array(
+                    /*'cgmconfigadmin' => array(
                         'icon'   =>'&#xe13c;',
                         'label' => 'Config Admin',
                         'route' => 'cgmconfigadmin',
 
-                    ),
+                    ),*/
                 ),
             ),
         ),
