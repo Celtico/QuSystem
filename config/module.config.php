@@ -110,6 +110,33 @@ return array(
                             ),
                         ),
                     ),
+                    'qu_ico_moon_route' => array(
+                        'type'    => 'segment',
+                        'options' => array(
+                            'route' => '[/:lang]/icomoon[/:action][/:id][/:id_parent]',
+                            'constraints' => array(
+                                'lang'      => '[a-z]{2}(-[A-Z]{2}){0,1}',
+                                'action'    => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id'        => '[0-9]+',
+                                'id_parent' => '[0-9]+',
+                            ),
+                            'defaults' => array(
+                                'lang'          => 'es',
+                                'controller'    => 'qu_ico_moon_controller',
+                                'action'        => 'index',
+                            ),
+                        ),
+                    ),
+                    'cgmconfigadmin_route' => array(
+                        'type'    => 'segment',
+                        'options' => array(
+                            'route' => '[/:lang]/config[/:action][/:id][/:id_parent]',
+                            'defaults' => array(
+                                'controller'    => 'CgmConfigAdmin_ConfigOptionsController',
+                                'action'        => 'index',
+                            ),
+                        ),
+                    ),
                 ),
             ),
         ),
@@ -142,6 +169,19 @@ return array(
                         'label' => 'Languages',
                         'route' => 'system_route/languages_route',
                     ),
+                    /*'utilities' => array(
+                           'icon'  => '&#xe13c;',
+                           'label' => 'Utilities',
+                           'route' => 'system_route/qu_ico_moon_route',
+                           'order' =>100,
+                           'pages' => array(*/
+                        'qu_ico_moon' => array(
+                            'icon'   =>'&#xe054;',
+                            'label' => 'IcoMoon',
+                            'route' => 'system_route/qu_ico_moon_route',
+                        ),
+                        /*),
+                    ),*/
                     'parameters' => array(
                         'icon'  => '&#xe141;',
                         'label' => 'Parameters',
@@ -153,12 +193,12 @@ return array(
                         'route' => 'system_route/el_finder_route',
 
                     ),
-                    /*'cgmconfigadmin' => array(
+                    'cgmconfigadmin' => array(
                         'icon'   =>'&#xe13c;',
                         'label' => 'Config Admin',
-                        'route' => 'cgmconfigadmin',
+                        'route' => 'system_route/cgmconfigadmin_route',
 
-                    ),*/
+                    ),
                 ),
             ),
         ),

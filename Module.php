@@ -8,10 +8,36 @@
 namespace QuSystem;
 
 use QuAdmin\Options\QuAdminModelOptions;
-use Zend\Mvc\MvcEvent;
+use Zend\EventManager\EventInterface;
+use Zend\ModuleManager\Feature\BootstrapListenerInterface;
+use Zend\Crypt\Password\Bcrypt;
 
-class Module
+class Module implements BootstrapListenerInterface
 {
+
+    /**
+     * Listen to the bootstrap event
+     *
+     * @param EventInterface $e
+     * @return array
+     */
+    public function onBootstrap(EventInterface $e)
+    {
+        $app        = $e->getApplication();
+        $em         = $app->getEventManager();
+
+        $event = $em->getSharedManager();
+        $event->attach('QuAdmin\Form\QuForm', 'postEventFormFilter.password', function($e){
+
+            $data = $e->getParams();
+            $bCrypt = new Bcrypt;
+            $bCrypt->setCost(8);
+
+            return $bCrypt->create($data['password']);
+
+        }, 1);
+
+    }
 
     public function getServiceConfig()
     {
@@ -59,4 +85,5 @@ class Module
             ),
         );
     }
+
 }
