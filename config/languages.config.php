@@ -28,6 +28,7 @@ return array(
             'key_modified'      => 0,
             'key_level'         => 0,
             'key_path'          => 0,
+            'key_icon'          => 0,
 
         ),
 

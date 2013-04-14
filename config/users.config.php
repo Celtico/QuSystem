@@ -42,6 +42,7 @@ return array(
             'key_level'         => 0,
             'key_path'          => 0,
             'key_id_author'     => 0,
+            'key_icon'          => 0,
 
         ),
 
