@@ -6,15 +6,19 @@
     <div id="elfinder"></div>
 </div>
 
+<script type="text/javascript">
 
+    $('body').css('overflow','hidden');
+    var header = $('.header').height();
+    var crumb = $('.crumb').height();
+    var contentTop = $('.contentTop').height();
 
-<?php
-    echo
-    $this->QuElFinder(
-        'elfinder',
-        array(
-            'width' => "100%",
-            'height' => "1000",
-        )
-    );
-?>
+    var windowH = $(window).height();
+    var height =  windowH - ((header + crumb + contentTop) + 4);
+
+    $().ready(function(){
+        $('#elfinder').elfinder({"url":"\/quelfinder\/connector","lang":"ca","height":height,"width":"100%"}).elfinder('instance');
+    });
+
+</script>
+<?php echo $this->QuElFinder( 'elfinder' ); ?>

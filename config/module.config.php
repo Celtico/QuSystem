@@ -137,6 +137,23 @@ return array(
                             ),
                         ),
                     ),
+                    'qu_ace_route' => array(
+                        'type'    => 'segment',
+                        'options' => array(
+                            'route' => '[/:lang]/ace[/:action][/:id][/:id_parent]',
+                            'constraints' => array(
+                                'lang'      => '[a-z]{2}(-[A-Z]{2}){0,1}',
+                                'action'    => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id'        => '[0-9]+',
+                                'id_parent' => '[0-9]+',
+                            ),
+                            'defaults' => array(
+                                'lang'          => 'es',
+                                'controller'    => 'qu_ace_controller',
+                                'action'        => 'index',
+                            ),
+                        ),
+                    ),
                 ),
             ),
         ),
@@ -160,40 +177,35 @@ return array(
                 'order' =>100,
                 'pages' => array(
                     'users_route'  => array(
+                        'order' =>1,
                         'icon'  => '&#xe1e1;',
                         'label' => 'Users',
                         'route' => 'system_route/users_route',
                     ),
                     'languages' => array(
+                        'order' =>2,
                         'icon'  => '&#xe07e;',
                         'label' => 'Languages',
                         'route' => 'system_route/languages_route',
                     ),
-                    /*'utilities' => array(
-                           'icon'  => '&#xe13c;',
-                           'label' => 'Utilities',
-                           'route' => 'system_route/qu_ico_moon_route',
-                           'order' =>100,
-                           'pages' => array(*/
-                        'qu_ico_moon' => array(
-                            'icon'   =>'&#xe054;',
-                            'label' => 'IcoMoon',
-                            'route' => 'system_route/qu_ico_moon_route',
-                        ),
-                        /*),
-                    ),*/
+
                     'parameters' => array(
+                        'order' =>3,
                         'icon'  => '&#xe141;',
                         'label' => 'Parameters',
                         'route' => 'system_route/parameters_route',
                     ),
-                    'el_finder' => array(
-                        'icon'   =>'&#xe028;',
-                        'label' => 'El finder',
-                        'route' => 'system_route/el_finder_route',
+                    /*'utilities' => array(
+                          'icon'  => '&#xe13c;',
+                          'label' => 'Utilities',
+                          'route' => 'system_route/qu_ico_moon_route',
+                          'order' =>100,
+                          'pages' => array(*/
 
-                    ),
+                    /*),
+                ),*/
                     'cgmconfigadmin' => array(
+                        'order' =>10,
                         'icon'   =>'&#xe13c;',
                         'label' => 'Config Admin',
                         'route' => 'system_route/cgmconfigadmin_route',
