@@ -55,7 +55,7 @@ return array(
              'state',
         ),
 
-        'linkerModels'      => false,
+        'linkerModels'      => array(),
         'linkerParent'      => false,
         'defaultLanguage'   => false,
         'documents'         => false,

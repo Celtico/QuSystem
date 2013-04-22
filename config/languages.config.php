@@ -41,7 +41,7 @@ return array(
             'status',
         ),
 
-        'linkerModels'      => false,
+        'linkerModels'      => array(),
         'linkerParent'      => false,
         'optionsPaginator'  => array(
             'n'=>10,
