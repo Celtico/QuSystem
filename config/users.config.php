@@ -74,48 +74,62 @@ return array(
         'optionsForm' => array(
 
 
-        /**
-         * key group name
-         * for example, a minimum description
-         */
-        'GroupCenter' => array(
-            'serialized' => false,
-            'fieldset'=> array(
-                'type' =>'Zend\Form\Fieldset',
-                'name' => 'content',
-                'options' => array(
-                    'label' => 'User',
+
+            'GroupRight'  => array(
+                'serialized' => false,
+                'fieldset' => array(
+                    'type' =>'Zend\Form\Fieldset',
+                    'name' => 'parametres',
+                    'options' => array(
+                        'label'=>'Parametres'
+                    ),
+                    'attributes' => array(
+                        'span' =>'span3',
+                        ////'class' =>'fieldset-collapse',
+                    ),
                 ),
-            ),
-
-
-
 
                 /**
                  * key form
                  * for example input name
                  */
-                'state' => array(
-                    //form zf2 standard for reused
+                'status' => array(
                     'form' => array(
                         'type' => 'Zend\Form\Element\Select',
-                        'name'     => 'state',
+                        'name'     => 'status',
                         'options' => array(
-                            'label' => 'State',
-                            'value_options' => array(
-                                1 => 'Published',
-                                0 => '-',
-                            ),
+                            'label' => 'Status',
                         ),
-                        'attributes' => array(
-                            'type' => 'select',
+                        'attributes' =>  array(
+                            'options' => array(
+                                'Public'    =>'Public',
+                                'Private'   =>'Private',
+                            ),
                             'class'=>'fullwidth select',
                             'span'=>'span3',
-                            'value' => 1,
+
                         ),
+
+
                     ),
-                    //filter zf2 standard for reused
-                    'filter' => array('name'=> 'state','required' => false,),
+                    'filter' => array(
+                        'name'     => 'status',
+                        'required' => false,
+                    ),
+                ),
+            ),
+            /**
+             * key group name
+             * for example, a minimum description
+             */
+            'GroupCenter' => array(
+                'serialized' => false,
+                'fieldset'=> array(
+                    'type' =>'Zend\Form\Fieldset',
+                    'name' => 'GroupCenter',
+                    'options' => array(
+                        'label' => 'User',
+                    ),
                 ),
 
                 /**
