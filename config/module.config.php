@@ -11,6 +11,7 @@ return array(
         'invokables' => array(
             'users_controller' => 'QuSystem\Controller\QuUsersController',
             'languages_controller'  => 'QuSystem\Controller\QuLanguagesController',
+            'translator_controller'  => 'QuSystem\Controller\QuTranslatorController',
             'parameters_controller'  => 'QuSystem\Controller\QuParametersController',
             'el_finder_controller'  => 'QuSystem\Controller\QuElFinderController',
         ),
@@ -72,6 +73,23 @@ return array(
                             'defaults' => array(
                                 'lang'          => 'es',
                                 'controller'    => 'languages_controller',
+                                'action'        => 'index',
+                            ),
+                        ),
+                    ),
+                    'translator_route' => array(
+                        'type'    => 'segment',
+                        'options' => array(
+                            'route' => '[/:lang]/translator[/:action][/:id][/:id_parent]',
+                            'constraints' => array(
+                                'lang'      => '[a-z]{2}(-[A-Z]{2}){0,1}',
+                                'action'    => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id'        => '[0-9]+',
+                                'id_parent' => '[0-9]+',
+                            ),
+                            'defaults' => array(
+                                'lang'          => 'es',
+                                'controller'    => 'translator_controller',
                                 'action'        => 'index',
                             ),
                         ),
@@ -188,12 +206,17 @@ return array(
                         'label' => 'Languages',
                         'route' => 'system_route/languages_route',
                     ),
-
                     'parameters' => array(
                         'order' =>3,
                         'icon'  => '&#xe141;',
                         'label' => 'Parameters',
                         'route' => 'system_route/parameters_route',
+                    ),
+                    'translator' => array(
+                        'order' =>3,
+                        'icon'  => '&#xe12c;',
+                        'label' => 'Translator',
+                        'route' => 'system_route/translator_route',
                     ),
                     /*'utilities' => array(
                           'icon'  => '&#xe13c;',
@@ -207,7 +230,7 @@ return array(
                     'cgmconfigadmin' => array(
                         'order' =>10,
                         'icon'   =>'&#xe13c;',
-                        'label' => 'Config Admin',
+                        'label' => 'ConfigAdmin',
                         'route' => 'system_route/cgmconfigadmin_route',
 
                     ),

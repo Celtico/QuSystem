@@ -47,13 +47,17 @@ class Module implements BootstrapListenerInterface
                     $config = $sm->get('Config');
                     return new QuAdminModelOptions($config['qu_users_model']);
                 },
+                'qu_parameters_model' => function ($sm) {
+                    $config = $sm->get('Config');
+                    return new QuAdminModelOptions($config['qu_parameters_model']);
+                },
                 'qu_languages_model' => function ($sm) {
                     $config = $sm->get('Config');
                     return new QuAdminModelOptions($config['qu_languages_model']);
                 },
-                'qu_parameters_model' => function ($sm) {
+                'qu_translator_model' => function ($sm) {
                     $config = $sm->get('Config');
-                    return new QuAdminModelOptions($config['qu_parameters_model']);
+                    return new QuAdminModelOptions($config['qu_translator_model']);
                 },
 
 
@@ -67,6 +71,7 @@ class Module implements BootstrapListenerInterface
         $configFiles = array(
             __DIR__ . '/config/module.config.php',
             __DIR__ . '/config/users.config.php',
+            __DIR__ . '/config/translator.config.php',
             __DIR__ . '/config/languages.config.php',
             __DIR__ . '/config/parameters.config.php',
         );
